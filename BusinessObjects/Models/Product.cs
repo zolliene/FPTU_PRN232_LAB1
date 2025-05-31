@@ -2,19 +2,23 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessObjects.Models;
 
 public partial class Product
 {
     public int ProductId { get; set; }
-
+    [Required(ErrorMessage = "Product Name is required.")]
     public string ProductName { get; set; }
 
     public int CategoryId { get; set; }
 
+    [Required(ErrorMessage = "Units in stock is required.")]
+    [Range(0, int.MaxValue, ErrorMessage = "Units in stock must be greater than or equal to 0.")]
     public short? UnitsInStock { get; set; }
-
+    [Required(ErrorMessage = "Unit price is required.")]
+    [Range(0, double.MaxValue, ErrorMessage = "Unit price must be greater than or equal to 0.")]
     public decimal? UnitPrice { get; set; }
 
     public virtual Category Category { get; set; }

@@ -1,0 +1,107 @@
+﻿@* @model BusinessObjects.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitsInStock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ProductId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+@model BusinessObjects.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="mb-3 d-flex align-items-center" style="font-size: 1.5rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#0d6efd" class="bi bi-box-seam me-2" viewBox="0 0 16 16">
+        <path d="M8.22 1.123a.5.5 0 0 1 .56 0l5 3a.5.5 0 0 1 .22.423v6.908a.5.5 0 0 1-.22.423l-5 3a.5.5 0 0 1-.56 0l-5-3A.5.5 0 0 1 3 11.454V4.546a.5.5 0 0 1 .22-.423l5-3z" />
+        <path d="M8 3.09 4.5 5.06v5.88l3.5 2.054V3.09z" />
+        <path d="M8 3.09v9.904l3.5-2.054V5.06L8 3.09z" />
+    </svg>
+    Product Details
+</h1>
+
+<div class="card shadow-sm p-3 mb-4 rounded-3" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); max-width: 600px;">
+    <h4 class="mb-3 text-primary fw-bold border-bottom pb-1" style="font-size: 1.25rem;">Product Info</h4>
+    <dl class="row" style="font-size: 1rem;">
+        <dt class="col-sm-4 text-secondary fw-semibold">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class="col-sm-8 border-bottom pb-1 mb-2">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt class="col-sm-4 text-secondary fw-semibold">
+            @Html.DisplayNameFor(model => model.UnitsInStock)
+        </dt>
+        <dd class="col-sm-8 border-bottom pb-1 mb-2">
+            @Html.DisplayFor(model => model.UnitsInStock)
+        </dd>
+
+        <dt class="col-sm-4 text-secondary fw-semibold">
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+        <dd class="col-sm-8 border-bottom pb-1 mb-2">
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+        <dt class="col-sm-4 text-secondary fw-semibold">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="col-sm-8 border-bottom pb-1 mb-2">
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+    </dl>
+</div>
+
+<div class="d-flex gap-2">
+    <a asp-action="Edit" asp-route-id="@Model?.ProductId" class="btn btn-primary shadow-sm" style="min-width: 100px; transition: transform 0.2s;">
+        Edit
+    </a>
+    <a asp-action="Index" class="btn btn-outline-secondary shadow-sm" style="min-width: 100px; transition: transform 0.2s;">
+        Back to List
+    </a>
+</div>
+
+<style>
+    a.btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(13, 110, 253, 0.25);
+    }
+</style>
+

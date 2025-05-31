@@ -63,6 +63,11 @@ public class ProductDAO
     public static Product GetProductById(int id)
     {
         using var db = new MyStoreContext();
-        return db.Products.FirstOrDefault(c => c.ProductId.Equals(id));
+       return db.Products.Include(c=>c.Category).FirstOrDefault(c => c.ProductId.Equals(id));
+        //var p1=   db.Products
+        //            .Include(p => p.Category)
+        //            .FirstOrDefaultAsync(p => p.ProductId == id);
+        //return p1;
+
     }
 }

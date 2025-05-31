@@ -21,6 +21,8 @@ public partial class MyStoreContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseSqlServer(GetConnectionString());
+           
+
         }
 
     }

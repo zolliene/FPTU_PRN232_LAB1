@@ -1,3 +1,4 @@
+using DataAccessObjects;
 using Repositories;
 using Services;
 using System.Text.Json.Serialization;
@@ -34,5 +35,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();
